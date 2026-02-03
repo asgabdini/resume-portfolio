@@ -1,26 +1,13 @@
 import { useTranslation } from "react-i18next";
 import moment from "moment-jalaali";
 import Layout from "../components/Layout";
-
-const aboutData = {
-  fullName: {
-    en: "Asghar Abedini",
-    fa: "اصغر عابدینی",
-  },
-  fieldOfStudy: {
-    en: "Software Engineering",
-    fa: "مهندسی نرم‌افزار",
-  },
-  currentLocation: {
-    en: "Tehran",
-    fa: "تهران",
-  },
-  birthYearShamsi: 1375,
-  birthYearGregorian: 1996,
-};
+import { useAppData } from "../contexts/AppDataContext.jsx";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
   const { t, i18n } = useTranslation();
+
+  const { bio } = useAppData();
 
   const currentDate = moment();
   let age;
@@ -28,12 +15,12 @@ const About = () => {
 
   if (i18n.language === "fa") {
     const currentYearShamsi = currentDate.jYear();
-    age = currentYearShamsi - aboutData.birthYearShamsi;
-    birthYear = aboutData.birthYearShamsi;
+    age = currentYearShamsi - bio.birthYearShamsi;
+    birthYear = bio.birthYearShamsi;
   } else {
     const currentYearGregorian = currentDate.year();
-    age = currentYearGregorian - aboutData.birthYearGregorian;
-    birthYear = aboutData.birthYearGregorian;
+    age = currentYearGregorian - bio.birthYearGregorian;
+    birthYear = bio.birthYearGregorian;
   }
 
   return (
@@ -49,9 +36,7 @@ const About = () => {
                 </h2>
               </div>
               <p className="text-gray-600 dark:text-gray-400">
-                {i18n.language === "fa"
-                  ? aboutData.fullName.fa
-                  : aboutData.fullName.en}
+                {i18n.language === "fa" ? bio.fullName.fa : bio.fullName.en}
               </p>
             </div>
           </div>
@@ -80,8 +65,8 @@ const About = () => {
               </div>
               <p className="text-gray-600 dark:text-gray-400">
                 {i18n.language === "fa"
-                  ? aboutData.fieldOfStudy.fa
-                  : aboutData.fieldOfStudy.en}
+                  ? bio.fieldOfStudy.fa
+                  : bio.fieldOfStudy.en}
               </p>
             </div>
           </div>
@@ -96,8 +81,8 @@ const About = () => {
               </div>
               <p className="text-gray-600 dark:text-gray-400">
                 {i18n.language === "fa"
-                  ? aboutData.currentLocation.fa
-                  : aboutData.currentLocation.en}
+                  ? bio.currentLocation.fa
+                  : bio.currentLocation.en}
               </p>
             </div>
           </div>
@@ -108,10 +93,21 @@ const About = () => {
             {t("aboutMe.bio")}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-            {i18n.language === "fa" ? aboutData.bio?.fa : aboutData.bio?.en}
+            {i18n.language === "fa" ? bio.bio?.fa : bio.bio?.en}
           </p>
         </div>
       </div>
+
+      <Helmet>
+        <title>
+          {t("about")} |{" "}
+          {bio
+            ? i18n.language === "fa"
+              ? bio.fullName.fa
+              : bio.fullName.en
+            : "My Portfolio"}
+        </title>
+      </Helmet>
     </Layout>
   );
 };

@@ -5,6 +5,7 @@ const ProjectCard = ({
   description,
   technologies,
   image,
+  link=null
 }) => {
   const { i18n } = useTranslation();
 
@@ -20,9 +21,15 @@ const ProjectCard = ({
       </div>
 
       <div className="p-6">
-        <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+        <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2 flex items-center gap-2">
           {i18n.language === "fa" ? title.fa : title.en}
-        </h2>
+          {}
+          {link && (
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            <i className="fas fa-external-link-alt text-gray-500 dark:text-gray-300"></i>
+          </a>
+        )}
+      </h2>
 
         <p className="text-gray-600 dark:text-gray-300 mb-4">
           {i18n.language === "fa" ? description.fa : description.en}

@@ -1,60 +1,12 @@
 import Layout from "../components/Layout";
 import { useTranslation } from "react-i18next";
-
-const experiences = [
-  {
-    company: { en: "Real Estate Office", fa: "دفتر املاک" },
-    position: { en: "Consultant & Internal Manager", fa: "مشاور و مدیر داخلی" },
-    period: { en: "2016-2023", fa: "1395-1402" },
-    description: [
-      {
-        en: "Designed various forms for internal use and streamlined operations",
-        fa: "طراحی فرم‌های مختلف برای استفاده داخلی و تسهیل عملیات",
-      },
-      {
-        en: "Developed an application to manage various tasks such as registering files, clients, and properties",
-        fa: "توسعه اپلیکیشنی برای مدیریت کارهای مختلف مانند ثبت فایل‌ها، مشتریان",
-      },
-      {
-        en: "Implemented smart property search functionality for clients",
-        fa: "اجرای جستجوی هوشمند ملک برای مشتریان",
-      },
-      {
-        en: "Integrated SMS system to send property details to clients",
-        fa: "سیستم پیامک برای ارسال جزئیات ملک به مشتریان",
-      },
-      {
-        en: "Implemented a feature to register new properties from the Divar website",
-        fa: "ویژگی برای ثبت املاک جدید از سایت دیوار",
-      },
-      {
-        en: "Developed a property price estimation system based on Divar listings and registered properties",
-        fa: "سیستم تخمین قیمت ملک بر اساس آگهی‌های دیوار و املاک ثبت‌شده",
-      },
-    ],
-  },
-  {
-    company: { en: "Military Service", fa: "در خدمت سربازی" },
-    position: {
-      en: "Personnel Management System Developer & Support",
-      fa: "توسعه‌دهنده و پشتیبان سیستم مدیریت پرسنل",
-    },
-    period: { en: "2023-2024", fa: "1402-1403" },
-    description: [
-      {
-        en: "Developed and supported a personnel management system that reduced leave and rest violations to near zero",
-        fa: "توسعه و پشتیبانی سیستم مدیریت پرسنل که تخلفات مرخصی و استراحت را به حد صفر رساند",
-      },
-      {
-        en: "Ensured accurate statistics and data availability for the department",
-        fa: "اطمینان از دسترسی به آمار و داده‌های دقیق برای بخش مربوطه",
-      },
-    ],
-  },
-];
+import { useAppData } from "../contexts/AppDataContext";
+import { Helmet } from "react-helmet-async";
 
 const Experience = () => {
   const { t, i18n } = useTranslation();
+
+  const { experiences, bio } = useAppData();
 
   return (
     <Layout title={t("experience")}>
@@ -87,6 +39,16 @@ const Experience = () => {
           </div>
         ))}
       </div>
+      <Helmet>
+        <title>
+          {t("experience")} |{" "}
+          {bio
+            ? i18n.language === "fa"
+              ? bio.fullName.fa
+              : bio.fullName.en
+            : "My Portfolio"}
+        </title>
+      </Helmet>
     </Layout>
   );
 };

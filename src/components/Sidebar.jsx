@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "../contexts/ThemeContext";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useAppData } from "../contexts/AppDataContext";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const { i18n, t } = useTranslation();
   const { theme, toggleTheme } = useTheme();
 
   const isRTL = i18n.language === "fa";
+  const { bio } = useAppData();
 
   const navItems = [
     { path: "/", icon: "fas fa-home", text: "home" },
@@ -41,7 +43,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         {/* Logo section */}
         <div className="flex items-center justify-center p-6 border-b dark:border-gray-700">
           <span className="text-2xl font-bold text-gray-800 dark:text-white">
-            Portfolio
+            {i18n.language === "fa" ? bio.fullName.fa : bio.fullName.en}
           </span>
         </div>
 

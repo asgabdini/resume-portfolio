@@ -1,101 +1,12 @@
 import { useTranslation } from "react-i18next";
 import Layout from "../components/Layout";
-
-const educationData = [
-  {
-    degree: "educations.associateDegree",
-    university: {
-      en: "Shahid Shamshipoor College",
-      fa: "دانشکده شهید شمسی پور",
-    },
-    gpa: 16,
-    graduationDate: {
-      en: 2017,
-      fa: 1396,
-    },
-  },
-  {
-    degree: "educations.bachelorDegree",
-    university: {
-      en: "Shahid Shamshipoor College",
-      fa: "دانشکده شهید شمسی پور",
-    },
-    gpa: 16,
-    graduationDate: {
-      en: 2019,
-      fa: 1398,
-    },
-  },
-];
-
-const courses = [
-  {
-    title: {
-      en: "Practical Training in Git",
-      fa: "دوره آموزش عملی کار با گیت",
-    },
-    year: {
-      en: 2025,
-      fa: 1403,
-    },
-    certificateLink:
-      "https://quera.org/media/public/quera_certificate/c218996987944aa6bb59a996e3b161bf.jpg",
-    site: "quera.org",
-  },
-  {
-    title: {
-      en: "Jump Front-End with React",
-      fa: "جامپ فرانت‌اند با ری‌اکت (React)",
-    },
-    year: {
-      en: 2022,
-      fa: 1401,
-    },
-    certificateLink:
-      "https://quera.org/media/public/quera_certificate/fc73093430e749aba7417d3471182bef.jpg",
-    site: "quera.org",
-  },
-  {
-    title: {
-      en: "Advanced Python Programming",
-      fa: "برنامه‌نویسی پایتون پیشرفته",
-    },
-    year: {
-      en: 2022,
-      fa: 1401,
-    },
-    certificateLink:
-      "https://quera.org/media/public/quera_certificate/3a708703edc940c4a0ad7df37c995272.jpg",
-    site: "quera.org",
-  },
-  {
-    title: {
-      en: "Comprehensive NodeJs Training",
-      fa: "دوره آموزش جامع NodeJs",
-    },
-    year: {
-      en: 2021,
-      fa: 1400,
-    },
-    certificateLink: null, // این دوره عکس گواهینامه ندارد
-    site: "toplearn.com",
-  },
-  {
-    title: {
-      en: "Introduction to Deep Learning",
-      fa: "یادگیری عمیق مقدماتی",
-    },
-    year: {
-      en: 2022,
-      fa: 1401,
-    },
-    certificateLink: null, // این دوره عکس گواهینامه ندارد
-    site: "robotech-academy.com",
-  },
-];
+import { useAppData } from "../contexts/AppDataContext";
+import { Helmet } from "react-helmet-async";
 
 const Education = () => {
   const { t, i18n } = useTranslation();
+
+  const { educations, courses, bio } = useAppData();
 
   return (
     <Layout title={t("education")}>
@@ -106,7 +17,7 @@ const Education = () => {
             {t("educations.academicEducation")}
           </h1> */}
           <div className="grid gap-6 md:grid-cols-2">
-            {educationData.map((edu, index) => (
+            {educations.map((edu, index) => (
               <div
                 key={index}
                 className="bg-white dark:bg-gray-800 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 border border-gray-200 dark:border-gray-700"
@@ -219,6 +130,17 @@ const Education = () => {
           </div>
         </div>
       </div>
+
+      <Helmet>
+        <title>
+          {t("education")} |{" "}
+          {bio
+            ? i18n.language === "fa"
+              ? bio.fullName.fa
+              : bio.fullName.en
+            : "My Portfolio"}
+        </title>
+      </Helmet>
     </Layout>
   );
 };

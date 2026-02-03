@@ -8,8 +8,8 @@ const defaultLanguage =
   savedLanguage === "fa" || savedLanguage === "en"
     ? savedLanguage
     : userLanguage.startsWith("fa")
-    ? "fa"
-    : "en";
+      ? "fa"
+      : "en";
 
 const setDirection = (lng) => {
   if (lng === "fa") {
@@ -36,6 +36,7 @@ i18n.use(initReactI18next).init({
         darkMode: "Dark Mode",
         lightMode: "Light Mode",
         toggleTheme: "Toggle Theme",
+        resume: "Resume",
 
         homes: {
           welcome: "Welcome",
@@ -84,6 +85,7 @@ i18n.use(initReactI18next).init({
         darkMode: "حالت تاریک",
         lightMode: "حالت روشن",
         toggleTheme: "تغییر تم",
+        resume: " رزومه",
         homes: {
           welcome: "خوش آمدید",
           title: "نمای کلی از مهارت‌ها و تجربیات من",

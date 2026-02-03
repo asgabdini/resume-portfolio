@@ -1,40 +1,13 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
 import { useTranslation } from "react-i18next";
-
-export const technicalSkills = [
-  { name: "JavaScript", percentage: 85 },
-  { name: "React", percentage: 70 },
-  { name: "Vue", percentage: 85 },
-  { name: "Express", percentage: 85 },
-  { name: "Python", percentage: 85 },
-  { name: "SQL Server", percentage: 85 },
-  { name: "MongoDB", percentage: 70 },
-  { name: "Machine Learning", percentage: 60 },
-  { name: "Software Skills", percentage: 90 },
-];
-
-export const softSkills = [
-  { en: "Good Listener", fa: "شنونده خوب" },
-  { en: "Responsibility", fa: "مسئولیت‌پذیری" },
-  { en: "Innovation", fa: "نوآوری" },
-  { en: "Accepting Criticism", fa: "انتقادپذیری" },
-  { en: "Creativity and Idea Generation", fa: "خلاقیت و ایده‌پردازی" },
-  { en: "Problem Solving", fa: "مهارت حل مساله" },
-  { en: "Sense of Humor", fa: "شوخ طبعی" },
-  { en: "Providing Feedback", fa: "ارائه فیدبک" },
-  { en: "Teaching", fa: "آموزش دادن" },
-];
-
-export const languages = [
-  { name: { en: "Persian", fa: "فارسی" }, stars: 5 },
-  { name: { en: "Turkish", fa: "ترکی" }, stars: 4 },
-  { name: { en: "English", fa: "انگلیسی" }, stars: 2 },
-  { name: { en: "German", fa: "آلمانی" }, stars: 1 },
-];
+import { useAppData } from "../contexts/AppDataContext";
+import { Helmet } from "react-helmet-async";
 
 const Skills = () => {
   const { t, i18n } = useTranslation();
+
+  const { softSkills, languages, technicalSkills, bio } = useAppData();
 
   const [isAscending, setIsAscending] = useState(true);
 
@@ -91,8 +64,8 @@ const Skills = () => {
                       skill.percentage >= 80
                         ? "bg-gradient-to-r from-green-400 to-green-500"
                         : skill.percentage >= 60
-                        ? "bg-gradient-to-r from-yellow-400 to-yellow-500"
-                        : "bg-gradient-to-r from-red-400 to-red-500"
+                          ? "bg-gradient-to-r from-yellow-400 to-yellow-500"
+                          : "bg-gradient-to-r from-red-400 to-red-500"
                     }`}
                     style={{ width: `${skill.percentage}%` }}
                   ></div>
@@ -150,6 +123,16 @@ const Skills = () => {
           </div>
         </div>
       </div>
+      <Helmet>
+        <title>
+          {t("skill")} |{" "}
+          {bio
+            ? i18n.language === "fa"
+              ? bio.fullName.fa
+              : bio.fullName.en
+            : "My Portfolio"}
+        </title>
+      </Helmet>
     </Layout>
   );
 };

@@ -1,16 +1,19 @@
 import Layout from "../components/Layout";
-import { projectList } from "./Projects";
-import { technicalSkills, softSkills, languages } from "./Skills";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { useAppData } from "../contexts/AppDataContext";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const { t, i18n } = useTranslation();
 
+  const { softSkills, languages, technicalSkills, projects, bio } =
+    useAppData();
+
   const stats = [
     {
       title: { en: "Projects", fa: "پروژه‌ها" },
-      value: projectList.length,
+      value: projects.length,
       icon: "fas fa-project-diagram",
       color: "from-blue-400 to-blue-600",
     },
@@ -123,6 +126,17 @@ const Home = () => {
           </p>
         </div>
       </div>
+
+      <Helmet>
+        <title>
+          {t("resume")} |{" "}
+          {bio
+            ? i18n.language === "fa"
+              ? bio.fullName.fa
+              : bio.fullName.en
+            : "My Portfolio"}
+        </title>
+      </Helmet>
     </Layout>
   );
 };
