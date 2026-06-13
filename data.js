@@ -28,7 +28,7 @@ window.APP_DATA = {
       technologies: ["Express", "Vue", "Quasar", "SQL Server"],
     },
     {
-      id: 10,
+      id: 2,
       title: { en: "PetIran Platform", fa: "پلتفرم پتیران" },
       link: "https://pet-iran.com/fa",
       description: {
@@ -39,7 +39,7 @@ window.APP_DATA = {
       technologies: ["Vue"],
     },
     {
-      id: 2,
+      id: 3,
       title: {
         en: "Real Estate Management System for Android",
         fa: "سامانه مدیریت املاک برای اندروید",
@@ -52,30 +52,33 @@ window.APP_DATA = {
       technologies: ["B4A", "PHP", "MySQL"],
     },
     {
-      id: 3,
-      title: {
-        en: "Automatic Library Reservation Bot",
-        fa: "ربات رزرو خودکار کتابخانه",
-      },
-      description: {
-        en: "A bot for automating library reservations based on user requests, integrated with an API.",
-        fa: "رباتی برای رزرو خودکار کتابخانه بر اساس درخواست‌های کاربر که با یک API یکپارچه شده است.",
-      },
-      image: "./images/library_reservation_bot.png",
-      technologies: ["React", "MUI"],
-    },
-    {
       id: 4,
-      title: { en: "Kalimba Note Teaching App", fa: "پروژه آموزش ساز کالیبما" },
-      description: {
-        en: "An interactive app for teaching Kalimba notes, still in progress, built with React Native Expo and Express.",
-        fa: "یک اپلیکیشن تعاملی برای آموزش نت‌های کالیبما که هنوز در حال تکمیل است و با استفاده از React Native Expo و Express ساخته شده است.",
+      title: {
+        en: "Driving License Exam Prep",
+        fa: "آموزش و آزمون آیین نامه رانندگی",
       },
-      image: "./images/kalimba_teaching_app.png",
+      description: {
+        en: "Comprehensive driving license exam preparation platform. Includes educational courses, mock exams, interactive traffic signs practice, progress tracking, and exam history. Features include categorized practice tests, detailed performance analytics, and personalized study recommendations.",
+        fa: "پلتفرم جامع آمادگی آزمون آیین نامه رانندگی. شامل دوره‌های آموزشی، آزمون‌های شبیه‌سازی شده، تمرین تعاملی تابلوهای راهنمایی، پیگیری پیشرفت و تاریخچه آزمون‌ها. امکانات شامل تست‌های دسته‌بندی شده، تحلیل دقیق عملکرد و پیشنهادات مطالعه شخصی‌سازی شده.",
+      },
+      image: "./images/driving-exam-prep.jpg",
       technologies: ["React Native Expo", "Express", "MongoDB"],
     },
     {
       id: 5,
+      title: {
+        en: "High Society Online Game",
+        fa: "بازی آنلاین جامعه اشرافی",
+      },
+      description: {
+        en: "A real-time online multiplayer game built with React Native Expo for the client, Express for the backend, MongoDB for data storage, and Socket.IO for real-time communication. The game focuses on social interaction and competitive gameplay in a virtual high society environment.",
+        fa: "یک بازی آنلاین چندنفره در لحظه که با React Native Expo در سمت کلاینت، Express در بک‌اند، MongoDB برای دیتابیس و Socket.IO برای ارتباط لحظه‌ای ساخته شده است. این بازی بر تعامل اجتماعی و رقابت در یک جامعه مجازی اشرافی تمرکز دارد.",
+      },
+      image: "./images/high-society-game.png",
+      technologies: ["React Native Expo", "Express", "MongoDB", "Socket.IO"],
+    },
+    {
+      id: 6,
       title: {
         en: "Nurses Shift Management System",
         fa: "پروژه مدیریت شیفت پرستاران",
@@ -88,7 +91,7 @@ window.APP_DATA = {
       technologies: ["Python", "Qt", "SQLite"],
     },
     {
-      id: 6,
+      id: 7,
       title: {
         en: "Comprehensive Real Estate Management System",
         fa: "سیستم جامع مدیریت املاک",
@@ -101,7 +104,7 @@ window.APP_DATA = {
       technologies: ["React", "Express", "PostgreSQL"],
     },
     {
-      id: 7,
+      id: 8,
       title: {
         en: "Anonymous Chatbot on Telegram",
         fa: "ربات چت ناشناس تلگرام",
@@ -114,7 +117,7 @@ window.APP_DATA = {
       technologies: ["Express", "MongoDB"],
     },
     {
-      id: 8,
+      id: 9,
       title: { en: "Movie Search Bot", fa: "ربات فیلم یاب" },
       description: {
         en: "A bot that helps to search for movies from IMDB using Python.",
@@ -124,7 +127,7 @@ window.APP_DATA = {
       technologies: ["Python"],
     },
     {
-      id: 9,
+      id: 10,
       title: { en: "Website Monitoring Bot", fa: "ربات مانیتورینگ وبسایت" },
       description: {
         en: "A Python bot that monitors a website and sends requests when necessary via an API.",
@@ -133,18 +136,35 @@ window.APP_DATA = {
       image: "./images/website_monitoring_bot.png",
       technologies: ["Python"],
     },
+    {
+      id: 11,
+      title: {
+        en: "Automatic Library Reservation Bot",
+        fa: "ربات رزرو خودکار کتابخانه",
+      },
+      description: {
+        en: "A bot for automating library reservations based on user requests, integrated with an API.",
+        fa: "رباتی برای رزرو خودکار کتابخانه بر اساس درخواست‌های کاربر که با یک API یکپارچه شده است.",
+      },
+      image: "./images/library_reservation_bot.png",
+      technologies: ["React", "MUI"],
+    },
   ],
 
   technicalSkills: [
     { name: "JavaScript", percentage: 85 },
-    { name: "React", percentage: 70 },
     { name: "Vue", percentage: 85 },
+    { name: "Node.js", percentage: 85 },
     { name: "Express", percentage: 85 },
-    { name: "Python", percentage: 85 },
+    { name: "Python", percentage: 60 },
     { name: "SQL Server", percentage: 85 },
+    { name: "PostgreSQL", percentage: 75 },
     { name: "MongoDB", percentage: 70 },
+    { name: "React", percentage: 70 },
+    { name: "React Native", percentage: 70 },
+    { name: "REST API Development", percentage: 85 },
+    { name: "Git", percentage: 60 },
     { name: "Machine Learning", percentage: 60 },
-    { name: "Software Skills", percentage: 90 },
   ],
 
   softSkills: [
@@ -261,6 +281,50 @@ window.APP_DATA = {
 
   experiences: [
     {
+      company: { en: "NivData", fa: "نیودیتا" },
+      position: {
+        en: "Front-End Developer",
+        fa: "توسعه‌دهنده فرانت‌اند",
+      },
+      period: { en: "2025-Present", fa: "1404-اکنون" },
+      description: [
+        {
+          en: "Developed and maintained both the public website and administrative dashboard using Vue.js",
+          fa: "توسعه و نگهداری وب‌سایت اصلی و پنل مدیریت با استفاده از Vue.js",
+        },
+        {
+          en: "Collaborated closely with the back-end team to integrate APIs and implement new features",
+          fa: "همکاری نزدیک با تیم بک‌اند برای یکپارچه‌سازی APIها و پیاده‌سازی قابلیت‌های جدید",
+        },
+        {
+          en: "Built responsive and user-friendly interfaces across different sections of the platform",
+          fa: "پیاده‌سازی رابط‌های کاربری واکنش‌گرا و کاربرپسند در بخش‌های مختلف پلتفرم",
+        },
+        {
+          en: "Contributed to the development of the PetIran platform as part of the product team",
+          fa: "مشارکت در توسعه پلتفرم پتیران به عنوان عضوی از تیم توسعه محصول",
+        },
+      ],
+    },
+    {
+      company: { en: "Military Service", fa: "در خدمت سربازی" },
+      position: {
+        en: "Personnel Management System Developer & Support",
+        fa: "توسعه‌دهنده و پشتیبان سیستم مدیریت پرسنل",
+      },
+      period: { en: "2023-2024", fa: "1402-1403" },
+      description: [
+        {
+          en: "Developed and supported a personnel management system that reduced leave and rest violations to near zero",
+          fa: "توسعه و پشتیبانی سیستم مدیریت پرسنل که تخلفات مرخصی و استراحت را به حد صفر رساند",
+        },
+        {
+          en: "Ensured accurate statistics and data availability for the department",
+          fa: "اطمینان از دسترسی به آمار و داده‌های دقیق برای بخش مربوطه",
+        },
+      ],
+    },
+    {
       company: { en: "Real Estate Office", fa: "دفتر املاک" },
       position: {
         en: "Consultant & Internal Manager",
@@ -291,24 +355,6 @@ window.APP_DATA = {
         {
           en: "Developed a property price estimation system based on Divar listings and registered properties",
           fa: "سیستم تخمین قیمت ملک بر اساس آگهی‌های دیوار و املاک ثبت‌شده",
-        },
-      ],
-    },
-    {
-      company: { en: "Military Service", fa: "در خدمت سربازی" },
-      position: {
-        en: "Personnel Management System Developer & Support",
-        fa: "توسعه‌دهنده و پشتیبان سیستم مدیریت پرسنل",
-      },
-      period: { en: "2023-2024", fa: "1402-1403" },
-      description: [
-        {
-          en: "Developed and supported a personnel management system that reduced leave and rest violations to near zero",
-          fa: "توسعه و پشتیبانی سیستم مدیریت پرسنل که تخلفات مرخصی و استراحت را به حد صفر رساند",
-        },
-        {
-          en: "Ensured accurate statistics and data availability for the department",
-          fa: "اطمینان از دسترسی به آمار و داده‌های دقیق برای بخش مربوطه",
         },
       ],
     },
