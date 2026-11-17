@@ -18,16 +18,6 @@ window.APP_DATA = {
 
   projects: [
     {
-      id: 1,
-      title: { en: "Personnel Management System", fa: "سامانه مدیریت پرسنل" },
-      description: {
-        en: "A personnel management system for managing employees, vacations, and various statuses such as shifts and breaks with a hierarchical structure.",
-        fa: "یک سامانه مدیریت پرسنل برای مدیریت کارکنان، مرخصی‌ها و وضعیت‌های مختلف مانند شیفت‌ها و استراحت‌ها با ساختار سلسله مراتبی.",
-      },
-      image: "./images/personnel_management.png",
-      technologies: ["Express", "Vue", "Quasar", "SQL Server"],
-    },
-    {
       id: 2,
       title: { en: "PetIran Platform", fa: "پلتفرم پتیران" },
       link: "https://pet-iran.com/fa",
@@ -37,19 +27,6 @@ window.APP_DATA = {
       },
       image: "./images/petiran.png",
       technologies: ["Vue"],
-    },
-    {
-      id: 3,
-      title: {
-        en: "Real Estate Management System for Android",
-        fa: "سامانه مدیریت املاک برای اندروید",
-      },
-      description: {
-        en: "A real estate management system for Android that allows applicants and files to be registered, files to be searched, and SMS notifications to be sent to applicants.",
-        fa: "یک سامانه مدیریت املاک برای اندروید که امکان ثبت متقاضیان و فایل‌ها، جستجوی فایل‌ها و ارسال پیامک به متقاضیان را فراهم می‌کند.",
-      },
-      image: "./images/real_estate_management_android.png",
-      technologies: ["B4A", "PHP", "MySQL"],
     },
     {
       id: 4,
@@ -77,6 +54,42 @@ window.APP_DATA = {
       technologies: ["React Native Expo", "Express", "PostgreSQL"],
     },
     {
+      id: 1,
+      title: { en: "Personnel Management System", fa: "سامانه مدیریت پرسنل" },
+      description: {
+        en: "A personnel management system for managing employees, vacations, and various statuses such as shifts and breaks with a hierarchical structure.",
+        fa: "یک سامانه مدیریت پرسنل برای مدیریت کارکنان، مرخصی‌ها و وضعیت‌های مختلف مانند شیفت‌ها و استراحت‌ها با ساختار سلسله مراتبی.",
+      },
+      image: "./images/personnel_management.png",
+      technologies: ["Express", "Vue", "Quasar", "SQL Server"],
+    },
+    {
+      id: 7,
+      title: {
+        en: "Comprehensive Real Estate Management System",
+        fa: "سیستم جامع مدیریت املاک",
+      },
+      description: {
+        en: "A complete real estate management system for property offices, still in progress, built with React, Express, and PostgreSQL.",
+        fa: "یک سیستم کامل مدیریت املاک برای دفاتر املاک که هنوز در حال تکمیل است و با استفاده از React، Express و PostgreSQL ساخته شده است.",
+      },
+      image: "./images/real_estate_management.png",
+      technologies: ["React", "Express", "PostgreSQL"],
+    },
+    {
+      id: 3,
+      title: {
+        en: "Real Estate Management System for Android",
+        fa: "سامانه مدیریت املاک برای اندروید",
+      },
+      description: {
+        en: "A real estate management system for Android that allows applicants and files to be registered, files to be searched, and SMS notifications to be sent to applicants.",
+        fa: "یک سامانه مدیریت املاک برای اندروید که امکان ثبت متقاضیان و فایل‌ها، جستجوی فایل‌ها و ارسال پیامک به متقاضیان را فراهم می‌کند.",
+      },
+      image: "./images/real_estate_management_android.png",
+      technologies: ["B4A", "PHP", "MySQL"],
+    },
+    {
       id: 5,
       title: {
         en: "High Society Online Game",
@@ -101,19 +114,6 @@ window.APP_DATA = {
       },
       image: "./images/nurses_shift_management.png",
       technologies: ["Python", "Qt", "SQLite"],
-    },
-    {
-      id: 7,
-      title: {
-        en: "Comprehensive Real Estate Management System",
-        fa: "سیستم جامع مدیریت املاک",
-      },
-      description: {
-        en: "A complete real estate management system for property offices, still in progress, built with React, Express, and PostgreSQL.",
-        fa: "یک سیستم کامل مدیریت املاک برای دفاتر املاک که هنوز در حال تکمیل است و با استفاده از React، Express و PostgreSQL ساخته شده است.",
-      },
-      image: "./images/real_estate_management.png",
-      technologies: ["React", "Express", "PostgreSQL"],
     },
     {
       id: 8,
