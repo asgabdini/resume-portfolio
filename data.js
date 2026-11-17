@@ -55,8 +55,9 @@ window.APP_DATA = {
       id: 4,
       title: {
         en: "Drivewell",
-        fa: "Drivewell",
+        fa: "درایوِل",
       },
+      link: "https://drivewell.ir",
       description: {
         en: "Comprehensive driving license exam preparation platform. Includes educational courses, mock exams, interactive traffic signs practice, progress tracking, and exam history. Features include categorized practice tests, detailed performance analytics, and personalized study recommendations.",
         fa: "پلتفرم جامع آمادگی آزمون آیین نامه رانندگی. شامل دوره‌های آموزشی، آزمون‌های شبیه‌سازی شده، تمرین تعاملی تابلوهای راهنمایی، پیگیری پیشرفت و تاریخچه آزمون‌ها. امکانات شامل تست‌های دسته‌بندی شده، تحلیل دقیق عملکرد و پیشنهادات مطالعه شخصی‌سازی شده.",
@@ -67,6 +68,7 @@ window.APP_DATA = {
     {
       id: 12,
       title: { en: "Chekamoon", fa: "چکامون" },
+      link: "https://chekamoon.ir/",
       description: {
         en: "A mobile application for managing and tracking checks, helping users organize check records and monitor their status.",
         fa: "اپلیکیشنی برای مدیریت و پیگیری چک‌ها که امکان ثبت اطلاعات چک‌ها، دسته‌بندی و دنبال‌کردن وضعیت آن‌ها را فراهم می‌کند.",
